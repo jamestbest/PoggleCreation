@@ -11,7 +11,8 @@ backstorys = ["cowboy", "pirate", "doctor", "baker", "lawyer", "chef", "spy", "s
               "athlete", "scientist", "inventor", "detective", "writer", "journalist", "politician", "businessperson",
               "entrepreneur", "philosopher", "scholar", "student"]
 
-accents = ["Posh", "Wild west", "Pirate", "Southern", "New York", "Boston", "Australian", "British", "Irish", "Scottish"]
+accents = ["Posh", "Wild west", "Pirate", "Southern", "New York", "Boston", "Australian", "British", "Irish",
+           "Scottish"]
 
 possibleNames = []
 
@@ -45,6 +46,18 @@ def create():
     accent = random.choice(accents)
 
     print("You are a " + alignment + " " + backstory + " named " + name + "." + " You have a " + accent + " accent.")
+
+    lifeRoll = random.randint(1, 20)
+
+    if lifeRoll < 10:
+        amnesiaRoll = random.randint(1, 4)
+
+        if lifeRoll == 1 and amnesiaRoll == 4:
+            print("Your poggle will live its entire life not knowing who they are, where they came from, or what will happen to them.")
+        else:
+            print(f"Your poggle will live for {lifeRoll + 3} hours and will have amnesia for {amnesiaRoll} hours.")
+    else:
+        print(f"Your poggle will live for {lifeRoll + 3} hours, with no amnesia.")
 
 
 create()
